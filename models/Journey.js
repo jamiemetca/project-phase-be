@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const JourneSchema = new Schema ({
     route: {
-        type: [{long: Number, lat: Number}],
+        type: [{long: Number, lat: Number}], //may end up an encoded string
         required: true
     },
     mode: {
@@ -16,6 +16,11 @@ const JourneSchema = new Schema ({
     },
     endTime: {
         type: Number,
+        required: true
+    },
+    belongs_to: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users',
         required: true
     }
 })
