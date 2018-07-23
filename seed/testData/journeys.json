@@ -1,3 +1,8 @@
 [
-    {}
+    {
+        "route": [],
+        "mode": "string",
+        "duration": "number",
+        "user": "username/user_Id"
+    }
 ]

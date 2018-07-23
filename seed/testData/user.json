@@ -2,11 +2,29 @@
     {
         "username": "jamie",
         "email": "jamie@jamie.com",
-        "avatar": "https://study.com/cimages/multimages/16/croceatingsc.jpg"
+        "avatar": "https://study.com/cimages/multimages/16/croceatingsc.jpg",
+        "xp": 0,
+        "achievements": []
     },
     {
         "username": "vel",
         "email": "vel@vel.com",
-        "avatar": "https://d2pu2bk1b66iw6.cloudfront.net/photos/2015/07/02/6-108557-black-norwegian-forest-cat-1435860936.jpg"
+        "avatar": "https://d2pu2bk1b66iw6.cloudfront.net/photos/2015/07/02/6-108557-black-norwegian-forest-cat-1435860936.jpg",
+        "xp": 0,
+        "achievements": []
+    },
+    {
+        "username": "howard",
+        "email": "howard@howard.com",
+        "avatar": "https://media-cdn.tripadvisor.com/media/photo-s/11/ff/07/4b/sweet-potato-spotted.jpg",
+        "xp": 0,
+        "achievements": []
+    },
+    {
+        "username": "tom",
+        "email": "tom@tom.com",
+        "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg/220px-Polar_Bear_-_Alaska_%28cropped%29.jpg",
+        "xp": 0,
+        "achievements": []
     }
 ]
