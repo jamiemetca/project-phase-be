@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const JourneSchema = new Schema ({
     route: {
-        type: [[lingitude, latitude], [longitude, latitude]],
+        type: [{long: Number, lat: Number}],
         required: true
     },
     mode: {
