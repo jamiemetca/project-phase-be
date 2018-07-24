@@ -1,8 +1,8 @@
 process.env.NODE_ENV = "test";
-const { app } = require("../app");
+const app = require("../app");
 const request = require("supertest")(app);
 const { expect } = require("chai");
-const seedDB = require("../seed/seed");
+const {seedDB} = require("../seed/seed");
 const testData = require("../seed/testData");
 const mongoose = require("mongoose");
 
@@ -18,7 +18,7 @@ describe("project_phase_test", () => {
   after(() => {
     return mongoose.disconnect();
   });
-  // get all users
+  // users
   describe("/api/users", () => {
     it("GET responds with all users", () => {
       return request
@@ -36,5 +36,23 @@ describe("project_phase_test", () => {
           );
         });
     });
+    it("GET user by username", () => {
+      return request  
+        .get(`/api/users/${userDocs[3].username}`)
+        .expect(200)
+        .then(res => {
+          const user = res.body.user;
+          expect(user).to.include.keys(
+            "username",
+            "email",
+            "avatar",
+            "xp",
+            "achievements",
+            "_id",
+            "__v"
+          )
+          expect(user._id).to.equal(`${userDocs[3]._id}`)
+        })
+    })
   });
 });
