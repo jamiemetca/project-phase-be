@@ -2,7 +2,7 @@ process.env.NODE_ENV = "test";
 const app = require("../app");
 const request = require("supertest")(app);
 const { expect } = require("chai");
-const {seedDB} = require("../seed/seed");
+const { seedDB } = require("../seed/seed");
 const testData = require("../seed/testData");
 const mongoose = require("mongoose");
 
@@ -37,7 +37,7 @@ describe("project_phase_test", () => {
         });
     });
     it("GET user by username", () => {
-      return request  
+      return request
         .get(`/api/users/${userDocs[3].username}`)
         .expect(200)
         .then(res => {
@@ -50,9 +50,33 @@ describe("project_phase_test", () => {
             "achievements",
             "_id",
             "__v"
-          )
-          expect(user._id).to.equal(`${userDocs[3]._id}`)
+          );
+          expect(user._id).to.equal(`${userDocs[3]._id}`);
+        });
+    });
+    it("POST user", () => {
+      return request
+        .post("/api/users")
+        .send({
+          username: "ant",
+          email: "ant@antman.com",
+          avatar:
+            "https://images.halloweencostumes.com/products/28771/1-1/child-deluxe-antman-costume.jpg"
         })
-    })
+        .expect(201)
+        .then(res => {
+          const user = res.body.newUser;
+          expect(user).to.include.keys(
+            "username",
+            "email",
+            "avatar",
+            "xp",
+            "achievements",
+            "_id",
+            "__v"
+          );
+          expect(user.username).to.equal("ant");
+        });
+    });
   });
 });
