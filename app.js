@@ -24,7 +24,12 @@ app.route('/*')
     })
 
 app.use((err, req, res, next) => {
-    console.log(err)
+    const {status, message} = err
+    err.name === 'ValidationError' || err.name === 'SyntaxError'
+    ? res.status(400).send({message: 'Bad request'})
+    : err.name === 'CastError'
+    ? res.status(404).send({message: 'Page not found'})
+    : res.status(status).send({message})
 })
 
 module.exports = app

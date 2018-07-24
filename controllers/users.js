@@ -5,13 +5,16 @@ const getAllUsers = (req, res, next) => {
         .then(users => {
             res.send({ users })
         })
+        .catch(next)
 }
 
 const getUserByUsername = (req, res, next) => {
     User.findOne(req.params)
         .then(user => {
+            if(user === null) throw next({status: 404, message: 'Page not found'});
             res.send({ user })
         })
+        .catch(next)
 }
 
 const postUser = (req, res, next) => {
@@ -21,14 +24,20 @@ const postUser = (req, res, next) => {
             res.status(201)
                 .send({ newUser })
         })
-        .catch(console.log)
+        .catch(next)
 }
 
 const getJourneysByUsername = (req, res, next) => {
-    Journey.find(req.params)
+    User.findOne({_id: req.params.belongs_to})
+        .then(user => {
+            if(user === null) throw next({status: 404, message: 'Page not found'});
+            return Journey.find(req.params)
+        })
         .then(journeys => {
             res.send({ journeys })
         })
+        .catch(next)
+    
 }
 
 module.exports = { getAllUsers, getUserByUsername, postUser, getJourneysByUsername }
