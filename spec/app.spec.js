@@ -119,6 +119,30 @@ describe('project_phase_test', () => {
           '__v',
         );
         expect(journey._id).to.equal(`${journeyDocs[2]._id}`);
-      }));
+    }));
+    it('POST new journey', () => {request
+      .post('/api/journeys')
+      .send({
+        route: '}mleIr~tLDeBj@H^@IvBo@IWQ',
+        mode: 'car-hybrid',
+        start_time: '2018-02-16T14:53:25Z',
+        end_time: '2018-02-16T18:53:25Z',
+        belongs_to: `${userDocs[2]._id}`,
+      })
+      .expect(201)
+      .then((res) => {
+        const {newJourney} = res.body
+        expect(newJourney).to.include.keys(
+          'route',
+          'mode',
+          'start_time',
+          'end_time',
+          'belongs_to',
+          '_id',
+          '__v',
+        );
+        expect(newJourney.belongs_to).to.equal(`${userDocs[2]._id}`)
+      })
+    })
   });
 });

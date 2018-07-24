@@ -14,4 +14,13 @@ const getJourneyById = (req, res, next) => {
     })
 }
 
-module.exports = { getAllJourneys, getJourneyById }
+const addJourney = (req, res, next) => {
+  const journey = new Journey(req.body)
+  journey.save()
+    .then((newJourney) => {
+      res.status(201).send({newJourney})
+    })
+    .catch(console.log)
+}
+
+module.exports = { getAllJourneys, getJourneyById, addJourney }
