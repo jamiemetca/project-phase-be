@@ -2,43 +2,43 @@
   {
     "route": "epmeIbjtLmAs@iBeAq@rC{@~BlAhAv@v@TP`@Z_B{AVaANy@",
     "mode": "walk",
-    "startTime": "2018-02-16T14:56:25Z",
-    "endTime": "2018-02-16T15:06:25Z",
+    "start_time": "2018-02-16T14:56:25Z",
+    "end_time": "2018-02-16T15:06:25Z",
     "belongs_to": "jamie"
   },
   {
     "route": "}mleIr~tLDeBj@H^@IvBo@IWQ",
     "mode": "cycle",
-    "startTime": "2018-02-16T14:55:25Z",
-    "endTime": "2018-02-16T15:16:25Z",
+    "start_time": "2018-02-16T14:55:25Z",
+    "end_time": "2018-02-16T15:16:25Z",
     "belongs_to": "vel"
   },
   {
     "route": "epmeIbjtLmAs@iBeAq@rC{@~BlAhAv@v@TP`@Z_B{AVaANy@",
     "mode": "car-electric",
-    "startTime": "2018-02-16T14:54:25Z",
-    "endTime": "2018-02-16T15:26:25Z",
+    "start_time": "2018-02-16T14:54:25Z",
+    "end_time": "2018-02-16T15:26:25Z",
     "belongs_to": "howard"
   },
   {
     "route": "}mleIr~tLDeBj@H^@IvBo@IWQ",
     "mode": "car-electric",
-    "startTime": "2018-02-16T14:53:25Z",
-    "endTime": "2018-02-16T15:21:25Z",
+    "start_time": "2018-02-16T14:53:25Z",
+    "end_time": "2018-02-16T15:21:25Z",
     "belongs_to": "tom"
   },
   {
     "route": "epmeIbjtLmAs@iBeAq@rC{@~BlAhAv@v@TP`@Z_B{AVaANy@",
     "mode": "car-electric",
-    "startTime": "2018-02-16T14:52:25Z",
-    "endTime": "2018-02-16T15:11:25Z",
+    "start_time": "2018-02-16T14:52:25Z",
+    "end_time": "2018-02-16T15:11:25Z",
     "belongs_to": "jamie"
   },
   {
     "route": "epmeIbjtLmAs@iBeAq@rC{@~BlAhAv@v@TP`@Z_B{AVaANy@",
     "mode": "car-electric",
-    "startTime": "2018-02-16T14:51:25Z",
-    "endTime": "2018-02-16T15:01:25Z",
+    "start_time": "2018-02-16T14:51:25Z",
+    "end_time": "2018-02-16T15:01:25Z",
     "belongs_to": "vel"
   }
 ]

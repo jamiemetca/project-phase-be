@@ -10,11 +10,11 @@ const JourneySchema = new Schema({
     type: String,
     required: true
   },
-  startTime: {
+  start_time: {
     type: String,
     required: true
   },
-  endTime: {
+  end_time: {
     type: String,
     required: true
   },

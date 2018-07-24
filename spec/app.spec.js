@@ -18,7 +18,7 @@ describe("project_phase_test", () => {
   after(() => {
     return mongoose.disconnect();
   });
-  // users
+  // Users --------------------------------------------
   describe("/api/users", () => {
     it("GET responds with all users", () => {
       return request
@@ -54,6 +54,25 @@ describe("project_phase_test", () => {
           expect(user._id).to.equal(`${userDocs[3]._id}`);
         });
     });
+    it('GET journeys by user mongoID', () => {
+      return request
+        .get(`/api/users/${userDocs[1]._id}/journeys`)
+        .expect(200)
+        .then(res => {
+          const journeys = res.body.journeys
+          expect(journeys.length).to.equal(2)
+          expect(journeys[0]).to.include.keys(
+            "route",
+            "mode",
+            "start_time",
+            "end_time",
+            "belongs_to",
+            "_id",
+            "__v"
+          )
+          expect(journeys[0].belongs_to).to.equal(`${userDocs[1]._id}`)
+        })
+    })
     it("POST user", () => {
       return request
         .post("/api/users")
@@ -79,4 +98,41 @@ describe("project_phase_test", () => {
         });
     });
   });
+  // Journeys --------------------------------------------
+  describe('/api/journeys', () => {
+    it('GET responds with all journeys', () => {
+      return request
+        .get('/api/journeys')
+        .expect(200)
+        .then(res => {
+          const journeys = res.body.journeys
+          expect(journeys[0]).to.include.keys(
+            "route",
+            "mode",
+            "start_time",
+            "end_time",
+            "belongs_to"
+          )
+          expect(journeys.length).to.equal(6)
+        })
+    })
+    it('GET journey by journey ID', () => {
+      return request
+        .get(`/api/journeys/${journeyDocs[2]._id}`)
+        .expect(200)
+        .then(res => {
+          const journey = res.body.journey
+          expect(journey).to.include.keys(
+            "route",
+            "mode",
+            "start_time",
+            "end_time",
+            "belongs_to",
+            "_id",
+            "__v"
+          )
+          expect(journey._id).to.equal(`${journeyDocs[2]._id}`)
+        })
+    })
+  })
 });

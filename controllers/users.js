@@ -1,4 +1,4 @@
-const { User } = require('../models')
+const { User, Journey } = require('../models')
 
 const getAllUsers = (req, res, next) => {
     User.find()
@@ -24,4 +24,11 @@ const postUser = (req, res, next) => {
         .catch(console.log)
 }
 
-module.exports = { getAllUsers, getUserByUsername, postUser }
+const getJourneysByUsername = (req, res, next) => {
+    Journey.find(req.params)
+        .then(journeys => {
+            res.send({ journeys })
+        })
+}
+
+module.exports = { getAllUsers, getUserByUsername, postUser, getJourneysByUsername }

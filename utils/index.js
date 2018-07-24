@@ -1,6 +1,5 @@
 const createUserLookup = (userDocs, journeyData) => {
   return journeyData.reduce((acc, { belongs_to }) => {
-    console.log(acc);
     acc[belongs_to] = userDocs.find(doc => doc.username === belongs_to);
     return acc;
   }, {});

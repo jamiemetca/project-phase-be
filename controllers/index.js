@@ -1,3 +1,4 @@
-const { getAllUsers, getUserByUsername, postUser } = require('./users')
+const { getAllUsers, getUserByUsername, postUser, getJourneysByUsername } = require('./users')
+const { getAllJourneys, getJourneyById } = require('./journeys')
 
-module.exports = { getAllUsers, getUserByUsername, postUser }
+module.exports = { getAllUsers, getUserByUsername, postUser, getAllJourneys, getJourneyById, getJourneysByUsername }
