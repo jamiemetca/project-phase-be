@@ -1,11 +1,11 @@
-const journeysRouter = require('express').Router()
-const { getAllJourneys, getJourneyById, addJourney } = require('../controllers')
+const journeysRouter = require('express').Router();
+const { getAllJourneys, getJourneyById, addJourney } = require('../controllers');
 
 journeysRouter.route('/')
   .get(getAllJourneys)
-  .post(addJourney)
+  .post(addJourney);
 
 journeysRouter.route('/:_id')
-  .get(getJourneyById)
+  .get(getJourneyById);
 
-module.exports = { journeysRouter }
+module.exports = { journeysRouter };

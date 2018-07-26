@@ -1,15 +1,17 @@
-const usersRouter = require('express').Router()
-const { getAllUsers, getUserByUsername, postUser, getJourneysByUsername } = require('../controllers')
+const usersRouter = require('express').Router();
+const {
+  getAllUsers, getUserByUsername, postUser, getJourneysByUsername,
+} = require('../controllers');
 
 usersRouter.route('/')
-    .get(getAllUsers)
-    .post(postUser)
+  .get(getAllUsers)
+  .post(postUser);
 
 usersRouter.route('/:belongs_to/journeys')
-    .get(getJourneysByUsername)
+  .get(getJourneysByUsername);
 
 usersRouter.route('/:username')
-    .get(getUserByUsername)
+  .get(getUserByUsername);
 
 
-module.exports = { usersRouter }
+module.exports = { usersRouter };
