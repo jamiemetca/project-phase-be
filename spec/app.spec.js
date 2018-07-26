@@ -41,8 +41,8 @@ describe('project_phase_test', () => {
           'achievements',
         );
       }));
-    it('GET user by username', () => request
-      .get(`/api/users/${userDocs[3].username}`)
+    it.only('GET user by username', () => request
+      .get(`/api/users/${userDocs[3].email}`)
       .expect(200)
       .then((res) => {
         const { user } = res.body;

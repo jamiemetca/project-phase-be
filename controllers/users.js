@@ -8,7 +8,7 @@ const getAllUsers = (req, res, next) => {
     .catch(next);
 };
 
-const getUserByUsername = (req, res, next) => {
+const getUserByEmail = (req, res, next) => {
   User.findOne(req.params)
     .then((user) => {
       if (user === null) throw next({ status: 404, message: 'Page not found' });
@@ -40,5 +40,5 @@ const getJourneysByUsername = (req, res, next) => {
 };
 
 module.exports = {
-  getAllUsers, getUserByUsername, postUser, getJourneysByUsername,
+  getAllUsers, getUserByEmail, postUser, getJourneysByUsername,
 };
