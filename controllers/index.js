@@ -1,6 +1,6 @@
 const {
   getAllUsers,
-  getUserByUsername,
+  getUserByEmail,
   postUser,
   getJourneysByUsername,
 } = require('./users');
@@ -12,7 +12,7 @@ const {
 
 module.exports = {
   getAllUsers,
-  getUserByUsername,
+  getUserByEmail,
   postUser,
   getAllJourneys,
   getJourneyById,
