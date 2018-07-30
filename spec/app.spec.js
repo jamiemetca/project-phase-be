@@ -41,7 +41,7 @@ describe('project_phase_test', () => {
           'achievements',
         );
       }));
-    it.only('GET user by username', () => request
+    it('GET user by username', () => request
       .get(`/api/users/${userDocs[3].email}`)
       .expect(200)
       .then((res) => {
@@ -72,8 +72,6 @@ describe('project_phase_test', () => {
         expect(journeys[0]).to.include.keys(
           'route',
           'mode',
-          'start_time',
-          'end_time',
           'belongs_to',
           '_id',
           '__v',
@@ -143,8 +141,6 @@ describe('project_phase_test', () => {
         expect(journeys[0]).to.include.keys(
           'route',
           'mode',
-          'start_time',
-          'end_time',
           'belongs_to',
         );
         expect(journeys.length).to.equal(6);
@@ -157,8 +153,6 @@ describe('project_phase_test', () => {
         expect(journey).to.include.keys(
           'route',
           'mode',
-          'start_time',
-          'end_time',
           'belongs_to',
           '_id',
           '__v',
@@ -180,10 +174,8 @@ describe('project_phase_test', () => {
     it('POST new journey', () => request
       .post('/api/journeys')
       .send({
-        route: '}mleIr~tLDeBj@H^@IvBo@IWQ',
+        route: [{ "lat": 53.4803217335176, "long": -2.28676869963685, "time": 1532959126826 }, { "lat": 53.486177, "long": -2.239966, "time": 1532959273863 }],
         mode: 'car-hybrid',
-        start_time: '2018-02-16T14:53:25Z',
-        end_time: '2018-02-16T18:53:25Z',
         belongs_to: `${userDocs[2]._id}`,
       })
       .expect(201)
@@ -192,8 +184,6 @@ describe('project_phase_test', () => {
         expect(newJourney).to.include.keys(
           'route',
           'mode',
-          'start_time',
-          'end_time',
           'belongs_to',
           '_id',
           '__v',
