@@ -17,6 +17,8 @@ mongoose.connect(DB_URL)
   })
   .catch(console.log);
 
+app.use('/api', express.static('public'));
+
 app.use('/api', apiRouter);
 
 app.route('/*')
