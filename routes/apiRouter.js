@@ -2,7 +2,7 @@ const apiRouter = require('express').Router();
 const { usersRouter } = require('./usersRouter');
 const { journeysRouter } = require('./journeysRouter');
 
-apiRouter.reoute('/')
+apiRouter.route('/')
   .get((req, res, next) => {
     res.render('public/index');
   });
