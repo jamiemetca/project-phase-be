@@ -21,7 +21,7 @@ supertest ^3.1.0
 All packages can be installed using: npm install ; dev dependencies can be installed with npm install -D
 
 ###Config
-You will need to create a file called 'config.js' in a folder called 'config'. The file should export the value of DB_URL depending on the process.env.NODE_ENV. For testing this should be set to localhost mongodb with standart port and db name final_project_test. For development, it should be set to localhost mongodb standard port and db name final_project_dev. For production, it should be set to the mlab link provided on request. The default running environment should be the development one.
+You will need to create a file called 'index.js' in a folder called 'config'. The file should export the value of DB_URL depending on the process.env.NODE_ENV. For testing this should be set to localhost mongodb with standard port and db name final_project_test. For development, it should be set to localhost mongodb standard port and db name final_project_dev. For production, it should be set to the mlab link provided on request. The default running environment should be the development one.
 
 ###To seed the database
 Run 'npm run seed:dev' to seed the development database
@@ -29,7 +29,7 @@ Run 'npm run seed:dev' to seed the development database
 ###Testing
 When testing, the index.spec.js file will automatically set NODE_ENV to test, and will re-seed the database before each test.
 
-To run the test suite run 'mongod' to connect to the mongo db and 'npm t' in a new terminal.
+To run the test suite run 'mongod' to connect to the mongodb and 'npm t' in a new terminal.
 
 The tests are created to test each end point.
 
